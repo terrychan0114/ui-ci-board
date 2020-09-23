@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   factory: string = 'nj';
   sorting: string;
   constructor(private data: DataService) { setInterval(()=> {this.update_table(this.sorting)},5000) }
-  home_route: any = 'http://10.10.4.61:8083/status';
+  home_route: any = 'http://10.10.4.61:8084/status';
   route: any;
 
   ngOnInit(): void {
