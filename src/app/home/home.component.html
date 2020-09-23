@@ -1,12 +1,13 @@
-<p>Continuous Improvement board</p>
+<p >Continuous Improvement board</p>
 
-<!-- <div class="btn-group" role="group" aria-label="Basic example">
-    <p>
-        Search by:
-        <button mdbBtn type="button" color="primary" outline="true" class="waves-light" mdbWavesEffect (click)="switchToFactory('nj')">NJ Status</button>
-        <button mdbBtn type="button" color="primary" outline="true" class="waves-light" mdbWavesEffect (click)="switchToFactory('va')">VA status</button>
-    </p>
-</div> -->
+<div class="btn-group" role="group" aria-label="Basic example">
+    <h4>
+        <button mdbBtn type="button" color="primary" outline="true" class="waves-light" mdbWavesEffect (click)="sort_by_ticket_num()">Sort by Ticket number</button>
+        <button mdbBtn type="button" color="primary" outline="true" class="waves-light" mdbWavesEffect (click)="sort_by_urgency()">Sort by Urgency</button>
+        <button mdbBtn type="button" color="primary" outline="true" class="waves-light" mdbWavesEffect (click)="sort_by_status()">Sort by Status</button>
+    </h4>
+</div>
+
 <font size="5" face="calibri">
     <table border *ngIf="status_list" style="width: 100%;">
         <tr>
@@ -16,14 +17,16 @@
             <th>Responsible person</th>
             <th>Action status</th>
             <th>Date added</th>
+            <th>Urgency</th>
         </tr>
-        <tr *ngFor="let items of status_list">
+        <tr *ngFor="let items of status_list" >
             <td style="text-align: center;">{{ items.ticket_num }}</td>
             <td style="text-align: center;">{{ items.suggestion }}</td>
             <td style="text-align: center;">{{ items.req_person }}</td>
             <td style="text-align: center;">{{ items.res_person }}</td>
-            <td style="text-align: center;">{{ items.status }}</td>
+            <td style="text-align: center;" [style.color] = "getColor(items.status)">{{ items.status }}</td>
             <td style="text-align: center;">{{ items.date_added }}</td>
+            <td style="text-align: center;">{{ items.urgency }}</td>
         </tr>
     
     </table>
