@@ -3,6 +3,8 @@ header {
 
     .logo {
         font-weight: bold;
+        font-size: 40px;
+        width: 2000px;
     }
 
     nav {
@@ -11,15 +13,12 @@ header {
         ul {
             list-style-type: none;
             margin: 0; padding: 0;
-
             li {
                 float: left;
-
                 a {
                     padding: 1.5em;
                     text-transform: uppercase;
-                    font-size: .8em;
-
+                    font-size: 1em;
                     &:hover {
                         background: #b3d9ff;
                     }

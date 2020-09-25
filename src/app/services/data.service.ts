@@ -11,12 +11,10 @@ export class DataService {
   // home_route: string;
   constructor(private http: HttpClient) { }
 
-  getData(home_route,route,param_name,data): Observable<any>{
-    let param1 = new HttpParams().set(param_name,data);
-    // this.api_call = this.home_route + route;
-    return this.http.get(home_route + route,{params: param1})
+  getData(home_route,route,input): Observable<any>{
+    // let param = new HttpParams(input);
+    return this.http.get(home_route + route,{params: input})
   }
-
   // postData(home_route,route,opost:PostInventory): Observable<any>{
   //   // this.api_call = this.home_route + route;
   //   return this.http.post(home_route + route,opost);
